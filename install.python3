@@ -1,5 +1,14 @@
 #!/usr/bin/python3
 import subprocess, os, random, string, sys, shutil, socket, time, io
+# قراءة نوع السيرفر من ملف
+server_type = "main"  # القيمة الافتراضية
+try:
+    with open("/root/xui_server_type.txt", "r") as f:
+        server_type = f.read().strip()
+except:
+    pass
+
+print(f"تم اختيار نوع السيرفر: {server_type}")
 
 if sys.version_info.major != 3:
     print("Please run with python3.")
